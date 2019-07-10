@@ -1,1 +1,6 @@
+*.dll
 
+/MovieReviewApp/MovieReviewApp/bin/*
+/MovieReviewApp/MovieReviewApp/obj/*
+.suo
+/MovieReviewApp/packages/*
