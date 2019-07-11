@@ -16,15 +16,15 @@ namespace MovieReviewApp.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
-            return View();
+            return Redirect("http://localhost:50098/");
+            //return View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
-            return View();
+            return RedirectToRoute(new { action = "about" });
+            //return View();
         }
     }
 }

@@ -1,0 +1,34 @@
+﻿@model List<MovieReviewApp.Models.Movie>
+@{
+    ViewBag.Title = "Movie Collection";
+}
+
+<h2>@ViewBag.Title</h2>
+@*<div>
+        @Html.Action("Message")
+    </div>
+    @{Html.RenderAction("message");}*@
+
+<table class="table">
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Release Date</th>
+        <th>Synopsis</th>
+        <th>Action(s)</th>
+    </tr>
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>@movie.Code</td>
+            <td>@movie.Name</td>
+            <td>@movie.ReleaseDate.ToString("dd/MM/yyyy")</td>
+            <td>@movie.Synopsis</td>
+            <td>
+                @Html.ActionLink("Edit", "edit", new { id = movie.Id }, new { @class = "btn btn-success" })
+                @Html.RouteLink("Detail", "default", new { id = movie.Id }, new { @class = "btn btn-default" })
+                @Html.ActionLink("Delete", "delete", new { id = movie.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+</table>
