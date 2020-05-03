@@ -1,0 +1,6 @@
+# ignore project artifact folders
+bin/
+obj/
+
+# ignore IDE related files/folders
+.vscode/
