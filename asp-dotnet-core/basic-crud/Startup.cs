@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
+using basic_crud.data;
 
 namespace basic_crud
 {
@@ -28,19 +30,21 @@ namespace basic_crud
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<TodoContext>(options => options.UseInMemoryDatabase("TodoList"));
             services.AddControllers();
             // Register the Swagger generator, defining one Swagger document 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo 
-                { 
-                    Title = "My Basic CRUD API", 
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "My Basic CRUD API",
                     Version = "v1",
-                    Contact = new OpenApiContact(){
+                    Contact = new OpenApiContact()
+                    {
                         Name = "Rajaneesh Rai",
                         Email = "rajneeshrai83@yahoo.in",
                         Url = new Uri("https://rajneeshrai.github.io/")
-                    } 
+                    }
                 });
                 // Set the comments path for the Swagger JSON and UI.
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
