@@ -23,6 +23,10 @@ namespace basic_crud.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// This is a GET method that returns the WeatherForecast
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
