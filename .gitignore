@@ -2,5 +2,8 @@
 bin/
 obj/
 
+# ignore node/angular artifacts
+node_modules/
+
 # ignore IDE related files/folders
 .vscode/
