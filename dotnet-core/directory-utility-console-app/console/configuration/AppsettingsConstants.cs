@@ -1,4 +1,4 @@
-namespace console_app1
+namespace DirectoryUtility.Console.Configuration
 {
     public static class Appsettings_Constants
     {

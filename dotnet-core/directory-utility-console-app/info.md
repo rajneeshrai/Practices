@@ -1,8 +1,15 @@
+# Directory Utility Console App
+
+This console has following features
+
+* Renames the file/folder recursively to lower case
+
 This is a simple console app targetting linux machine. In this sample, i'm trying to be familier with the framework.
 
 RID(Runtime identifiers)
 ------------------------
-https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
+
+<https://docs.microsoft.com/en-us/dotnet/core/rid-catalog>
 
 # Publishing app for linux machine
 
