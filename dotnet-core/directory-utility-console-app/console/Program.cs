@@ -26,7 +26,7 @@ namespace DirectoryUtility.AppConsole
             List<string> ignoreFiles = Configuration.GetSection(Appsettings_Constants.IgnoreFolders).Value
                 .Split(",").ToList<string>();
 
-            DirectoryUtilities.ShowFilesRecurse1(sourceFolderPath, ignoreFiles);
+            DirectoryUtilities.TransformFileNamesToLower(sourceFolderPath, ignoreFiles);
 
             Console.ReadLine();
         }

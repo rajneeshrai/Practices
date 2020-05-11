@@ -7,16 +7,16 @@ namespace DirectoryUtility.Utilities
     public class DirectoryUtilities
     {
         /// <summary>
-        /// Method to show content (files/folders) of a folder path
+        /// Transform file/folder name
         /// </summary>
         /// <param name="path"></param>
-        public static void ShowFilesRecurse1(string path, List<string> ignoreFiles)
+        public static void TransformFileNamesToLower(string path, List<string> ignoreFiles)
         {
             // Prepare the DirectoryInfo object from path string
             var directory = new DirectoryInfo(path);
-            if (StringUtilities.CanTransformToLower(directory.Name))
+            if (StringUtilities.CanTransformToLowerCase(directory.Name))
             {
-                var newDirInLowerCase = StringUtilities.TransformToLower(directory.FullName);
+                var newDirInLowerCase = StringUtilities.TransformToLowerCase(directory.FullName);
                 var tmpDir = directory.FullName + "_tmp";
                 directory.MoveTo(tmpDir);
                 directory = new DirectoryInfo(tmpDir);
@@ -28,9 +28,9 @@ namespace DirectoryUtility.Utilities
             foreach (FileInfo file in directory.GetFiles())
             {
                 // Transform the file if needed
-                if (StringUtilities.CanTransformToLower(file.Name))
+                if (StringUtilities.CanTransformToLowerCase(file.Name))
                 {
-                    var newFileNameInLower = StringUtilities.TransformToLower(file.FullName);
+                    var newFileNameInLower = StringUtilities.TransformToLowerCase(file.FullName);
                     file.MoveTo(newFileNameInLower, true);
                     Console.WriteLine("{0}: {1}", "File", newFileNameInLower);
                 }
@@ -42,7 +42,7 @@ namespace DirectoryUtility.Utilities
                 // traverse in allowed directory
                 if (!ignoreFiles.Contains(dir.Name))
                 {
-                    ShowFilesRecurse1(dir.FullName, ignoreFiles);
+                    TransformFileNamesToLower(dir.FullName, ignoreFiles);
                 }
             }
         }
