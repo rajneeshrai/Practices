@@ -31,10 +31,7 @@ namespace DirectoryUtility.Utilities
                 if (StringUtilities.CanTransformToLower(file.Name))
                 {
                     var newFileNameInLower = StringUtilities.TransformToLower(file.FullName);
-                    var tempFileNameInLower = file.FullName + "_tmp";
-                    file.MoveTo(tempFileNameInLower);
-                    var tmpFile = new FileInfo(tempFileNameInLower);
-                    tmpFile.MoveTo(newFileNameInLower);
+                    file.MoveTo(newFileNameInLower, true);
                     Console.WriteLine("{0}: {1}", "File", newFileNameInLower);
                 }
             }

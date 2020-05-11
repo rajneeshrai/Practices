@@ -2,10 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
-using DirectoryUtility.Console.Configuration;
+using DirectoryUtility.AppConsole.Configuration;
 using DirectoryUtility.Utilities;
 
-namespace DirectoryUtility.Console
+namespace DirectoryUtility.AppConsole
 {
     public class Program
     {
@@ -28,7 +28,7 @@ namespace DirectoryUtility.Console
 
             DirectoryUtilities.ShowFilesRecurse1(sourceFolderPath, ignoreFiles);
 
-            System.Console.ReadLine();
+            Console.ReadLine();
         }
     }
 }
